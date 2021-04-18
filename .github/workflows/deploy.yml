@@ -18,7 +18,7 @@ jobs:
       - name: Build app
         uses: ./
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
           workingDirectory: "test"
           publish: false
           secrets: |
@@ -40,7 +40,7 @@ jobs:
     - name: Publish app
       uses: ./
       with:
-        apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        apiToken: ${{ secrets.CF_API_TOKEN }}
         environment: "production"
         workingDirectory: 'test'
   publish_legacy_credentials:
@@ -76,7 +76,7 @@ jobs:
       - name: Publish app
         uses: ./
         with:
-          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CF_API_TOKEN }}
           environment: "production"
           workingDirectory: "test"
           secrets: |
